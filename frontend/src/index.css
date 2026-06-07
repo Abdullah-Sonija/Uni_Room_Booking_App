@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    @apply font-body text-navy antialiased;
+    background-color: #f0f2f5;
+  }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────────────────────────── */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-xl font-display font-semibold text-sm
+           bg-gold text-navy shadow-glow
+           transition-all duration-150 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-gold:not(:disabled):hover {
+    @apply brightness-105 shadow-hover;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-xl font-display font-semibold text-sm
+           bg-navy text-white
+           transition-all duration-150 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary:not(:disabled):hover {
+    @apply bg-navy/90 shadow-hover;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-xl font-display font-semibold text-sm
+           border border-navy text-navy bg-transparent
+           transition-all duration-150 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline:not(:disabled):hover {
+    @apply bg-navy/5;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded-xl font-display font-semibold text-sm
+           bg-red-500 text-white
+           transition-all duration-150 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-danger:not(:disabled):hover {
+    @apply bg-red-600;
+  }
+
+  /* ── Form ────────────────────────────────────────────────────────── */
+  .label {
+    @apply block text-sm font-display font-medium text-navy/60 mb-1.5;
+  }
+
+  .input-field {
+    @apply w-full h-11 px-3 rounded-xl border border-slate-200
+           bg-white text-navy text-sm font-body
+           placeholder:text-slate-300
+           focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/10
+           transition-colors;
+  }
+
+  .error-text {
+    @apply text-xs text-red-500 font-body mt-1;
+  }
+
+  /* ── Cards ───────────────────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6;
+  }
+
+  /* ── Page title ──────────────────────────────────────────────────── */
+  .page-title {
+    @apply font-display font-bold text-2xl text-navy;
+  }
+
+  /* ── Availability badge ──────────────────────────────────────────── */
+  .badge-free {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium
+           bg-jade/10 text-jade border border-jade/30;
+  }
+}
